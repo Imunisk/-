@@ -1,1 +1,31 @@
- 
+print("Yes, this is a {0}.".format(Drill))
+
+# 입출력. 입력받기
+answer = input(" Type whatever you'd like. : ")
+print("Typing received :"+ answer)
+print(type(answer))
+print("Yes, whatever you type it will be seen as a type of String.")
+
+# print 활용
+print("Py","Java")
+print("Py","Jave", sep=",", end="")
+print("-- The End")
+
+scores= {"Math":80, "Athletic":60, "Art":65}
+print(scores.key)
+print(scores.value)
+
+for subject,score in score.items():
+    print(subject.ljust(8),str(score)\
+.rjust(4),sep=";")
+
+capital= {'a':'A', 'b':'B','c':'C'}
+for small,large in capital.items:
+    print(small.ljust(8),large.rjust(4),\
+sep= ":")
+
+HowMany= {'dog':2, 'lion':5, 'pig':1}
+for animal,count in HowMany.items:
+    print(animal.ljust(8),str(count).rjust(4),\
+sep=":")
+
