@@ -24,8 +24,26 @@ for small,large in capital.items:
     print(small.ljust(8),large.rjust(4),\
 sep= ":")
 
+#code 1
 HowMany= {'dog':2, 'lion':5, 'pig':1}
 for animal,count in HowMany.items:
     print(animal.ljust(8),str(count).rjust(4),\
 sep=":")
+
+#code 2
+HowMany= {'dog':2, 'lion':5, 'pig':1}
+print((HowMany.key).ljust(8), sep=" ")
+
+#code 3
+HowMany= {'dog':2, 'lion':5, 'pig':1}
+print(HowMany.key.ljust(8), sep=" ")
+
+
+1. Are the code 2 and the code 3 the same?
+2. How can I make a code without 'for' and still get the same result of code 1?
+
+-->
+HowMany = {'dog': 2, 'lion': 5, 'pig': 1}
+print(" ".join(HowMany.keys()).ljust(8))
+///
 
