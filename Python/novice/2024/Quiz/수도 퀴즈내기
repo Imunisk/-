@@ -1,1 +1,18 @@
-1
+
+""" 이런 접근은 어떨까?
+나라와수도로 딕셔너리를 생성하고
+임의 QUIZ리스트를 만들어 퀴즈 질문을 한다. 정답과 오답 각각 카운트해 총 맞춘 갯수를 스크린에 표시한다.
+"""
+
+#딕셔너리_수도이름
+#임의로 5개 출력해 퀴즈내기    ?
+Capital = {'Korea':'Seoul', 'China':'Beijing', 'Japan':'Tokyo', 'USA':'Washington', 'Mexico': 'MexicoCity', 'Germany':'Berlin'}
+
+from random import randint
+Quiz=[]
+for i in range(3):
+    Quiz[i] = choice(Capital.keys)
+
+def printQuiz:
+    for i in range(5):
+        print('%d: %s' % (Quiz[i], Capital[Quiz[i]]))
