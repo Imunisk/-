@@ -1,0 +1,11 @@
+key : complexydney i feel dizzy
+
+yes!
+There's, There are so many difficult concepts to know when i study code programming.
+
+For example,
+At the very first moment i encountered this code below from the book, i was little bit thrilled, delighted and slightly light-headed.
+
+def mergeSort(L):
+    if len(L) == 2:
+        if L[0] <= L[1]:
