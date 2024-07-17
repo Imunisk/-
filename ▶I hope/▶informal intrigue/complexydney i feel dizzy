@@ -9,3 +9,16 @@ At the very first moment i encountered this code below from the book, i was litt
 def mergeSort(L):
     if len(L) == 2:
         if L[0] <= L[1]:
+            return [L[0], L[1]]
+        else:
+            return [L[1], L[0]]
+    else:
+        middle = len[L]//2
+        left = mergeSort(L[:middle])
+        right = mergeSort(L[middle:])
+        return merge(left, right)
+
+The reason I felt excited was
+this was the first example what i've seen which actually has shown how the 'slice' works in real code. (and it was the 2nd sample which has shown 'Recursive function') (You should know that i am a newbie.)
+And then,
+about 2 seconds later i began to feel dizzy, for real, struggling to clarify how this beautiful math gently make its own way on my mind. 
