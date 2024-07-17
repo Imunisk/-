@@ -1,0 +1,31 @@
+# 퍼즐로 배우는 알고리즘 11챕터
+# 한번 읽어보도록 하자.
+def mergeSort(L):
+    if len(L)== 2:
+        if L[0] <= L[1]:
+            return [L[0], L[1]]
+        else:
+            return [L[1], L[0]]
+    else:
+        middle = len(L)//2
+        left = mergeSort(L[:middle])
+        right = mergeSort(L[middle:])
+        return merge(left, right)
+
+def merge(left, right):
+    result = []
+    i, j= 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[i]:
+            result.append(left[i])
+            i++
+        else:
+            result.append(left[i])
+            j++
+    while i < len(left):
+        result.append(left[i])
+        i++
+    while j < len(right):
+        result.append(right[j])
+        j++
+    return result
