@@ -1,0 +1,75 @@
+'''
+this is a DRiLL
+And tommorrow i am going to attend a class to learn how to deal with the data sammelung methode. I am hundred percent for sure i would dedicate myself to this course.
+yes, yes.
+For a month the course will be held in 5 days per week and would be done continuously for about 6 darn hours straight.
+To be honest, i am kind a bit nervous wondering whether i may maintain my mind clearly without dozing off like being drowsy.
+Fight for it. I will.
+'''
+
+from random import *
+
+users = range(1, 21)
+users = list(users)
+shuffle(users)
+
+winners - sample(users, 4)
+
+print(" -- Winner for today is -- ")
+print("Chicken Coupon goes to : {0}"\
+.format(winner[0]))
+print("Coffee Coupon goes to : {0}"\
+,format(winner[1:]))
+print("Congrats!")
+
+users = range(1,21)
+
+from random import *
+
+users = list(range(1,21))
+shuffle(users)
+chicken_winner = sample(users,1)
+remain_users = set(users)- set(chicken_winner)
+coffee_winners = sample(list(remain_users), 2))
+
+print("congrats   ect.")
+
+from random import *
+
+cnt = 0
+for i in range(1,51):
+    time = randrange(5, 51)
+    if 5<= time <= 15:
+        print("[0] {0}th. (takes {1} min)"\
+.format(i, time))
+        cnt += 1
+    else:
+        print("[ ] {0}th. (takes {1} min)"\
+.format(i, time))
+
+print("Total Passen : {0} person".format(cnt))
+
+# prince, no  price
+price = 1000
+goods = 3
+total = 0
+
+for i in range(1, goods+1):
+    print("2 + 1 as discount benefit")
+    if i % 3 == 0:
+        continue
+    total += price
+print("Total price is " + str(total) + "dollars")
+
+# String = Formating methode. i will show you
+
+Korea = Seoul
+Korea_num = 82
+
+print("   ")
+"I am 
+
+
+
+
+
