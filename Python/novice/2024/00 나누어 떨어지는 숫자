@@ -1,0 +1,8 @@
+input_num = int(input("정수를 입력 해주세요: "))
+
+if input_num %2 == 0:
+    print(f"{input_num}은 나누어 떨어지는 숫자입니다.")
+elif input_num %2 == 1:
+    print(f"{input_num}은 나누어 떨어지는 숫자가 아닙니다.")
+else:
+    print("정수를 입력해주세요...")
