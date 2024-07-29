@@ -1,0 +1,130 @@
+# 숫자 갯수 - 염기의 갯수
+
+#  dna 리스트 속 글자의 갯수를 세려고 한다
+
+# dna = input("염기 서열을 입력해주세요.")
+dna = "gatacccca"
+dic={}
+
+'''
+## 잘못된 코드.
+# 이유분석 :  if elif이므로.
+#   if-elif 구조를 사용하면 첫 번째 조건이 참일 경우 나머지 조건들을 검사하지 않기 때문에,
+#  각 글자의 개수를 세는 데 적절하지 않습니다.
+#  각 글자의 개수를 개별적으로 세어야 하므로, if-elif가 아닌 여러 if 문을 사용해야 합니다.
+
+# 그리고, 출력 형식의 부적절함:
+# 원하는 출력 형식과 맞지 않으므로, 출력 형식을 for문으로 수정해야 합니다.
+
+# 주의 )))
+# 메소드엔 괄호가 필요하다
+# keys() values()
+
+if "g" in dna:
+    dic["g"] = dna.count("g")
+elif "a" in dna:
+    dic["a"] = dna.count("a")
+elif "t" in dna:
+    dic["t"] = dna.count("t")
+elif "c" in dna:
+    dic["c"] = dna.count("c")
+
+print(f"{dic.keys()}의 갯수: {dic.values()}", sep="\n")
+'''
+
+
+'''
+## 잘못된 코드.
+# 이유분석 :  이렇게 무한루프 해도 해결되지 않는다.
+# elif는 첫 번째 조건이 참이면 나머지 조건들을 검사하지 않기 때문에 무한루프해도 마찬가지이다.
+
+dna = "gatacccca"
+dic={}
+while(1):
+    if "g" in dna:
+        dic[g의 개수] = dna.count("g")
+    elif "a" in dna:
+        dic[a의 개수] = dna.count("a")
+    elif "t" in dna:
+        dic[t의 개수] = dna.count("t")
+    elif "c" in dna:
+        dic[c의 개수] = dna.count("c")
+for key, value in dic.items():
+    print(f"'{key}': {value}")
+'''
+
+
+
+'''
+## 잘못된 코드===> 수정함
+# 모두 if문으로 함. 결과 출력을 for문으로 출력함.
+# items() 는 메서드이므로 괄호를 잊지말기
+
+if "g" in dna:
+    dic["g"] = dna.count("g")
+if "a" in dna:
+    dic["a"] = dna.count("a")
+if "t" in dna:
+    dic["t"] = dna.count("t")
+if "c" in dna:
+    dic["c"] = dna.count("c")
+
+# 결과 출력
+for key, value in dic.items():
+    print(f"'{key}': {value}")
+'''
+
+
+
+# =========================================
+
+#  방법 1)
+g_count = dna.count("g")
+a_count = dna.count("a")
+t_count = dna.count("t")
+c_count = dna.count("c")
+
+# 결과 출력
+print(dna)
+print(f"g의 갯수: {g_count}")
+print(f"a의 갯수: {a_count}")
+print(f"t의 갯수: {t_count}")
+print(f"c의 갯수: {c_count}")
+
+
+#  방법 2)
+if "g" in dna:
+    dic["g"] = dna.count("g")
+if "a" in dna:
+    dic["a"] = dna.count("a")
+if "t" in dna:
+    dic["t"] = dna.count("t")
+if "c" in dna:
+    dic["c"] = dna.count("c")
+
+# 결과 출력
+print(dna)
+for key, value in dic.items():
+    print(f"{key}의 갯수: {value}")
+
+
+
+# gatacccca
+# g의 갯수: 1
+# a의 갯수: 3
+# t의 갯수: 1
+# c의 갯수: 4
+
+# =========================================
+
+'''
+ ( 방법 1과 방법 2는 모두 동일한 출력을 제공합니다.
+   그러나 각 방법의 장단점이 있으며, 특정 상황에서 더 적합한 방법이 있을 수 있습니다. )
+
+방법 1: 코드가 간단하고 <직관적>이며, 고정된 소수의 글자만 처리하는 경우.
+방법 2: <유연성과 확장성이 추후에도 필요> 할 경우나, 다양한 글자를 처리해야 하는 경우.
+
+일반적으로 더 많은 글자를 처리하거나 코드의 확장성을 고려한다면,
+방법 2가 더 좋습니다.
+반면, 간단한 상황에서는 방법 1이 더 적합할 수 있습니다.
+'''
