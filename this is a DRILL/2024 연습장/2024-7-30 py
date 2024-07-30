@@ -86,6 +86,51 @@ np_arange(0.1, 1.0, 0.1)  # 이렇게 실수로도 가능
 np_array1 = np.arange(1,10).reshape(3,3)
 
 
+#
+# np.sum() np.mean() np.max() np.median()
+# np.std() np.var() np.argmin()
+# f(x)=y에서  y가 최대(최소)가 되는 x인자(argument)
 
+# e.g_)
+# list_oct 리스트에 10월 온도들이 들어있다.
+np_oct = np.array(list_oct)
+'''
+np_oct.mean()은 온도의 평균, np.median(np_oct)은 온도의 중앙값.
+주의할 점: 메디안은 넘파일배열은 인자로 갖는다.
+np_oct.max()는 최고온도, np_oct.argmax()+1 은 최고온도가 있었던 일자.
+주의할 점: 인덱스는 0부터니까 플러스 1
+
+분산은 variance
+표준편차는 Standard Deviation
+중앙값은 데이터를 오름차순 정렬했을때 정 중앙에 있는 데이터.
+편차. deviation은 합하면 +- 되어 거의 0에 수렴하는
+아주 작은 값이다.
+따라서 variance. 분산 구할땐, 증폭을 위해 제곱을 해주고 합했다.
+이 분산에 제곱근을 씌우면 std 표준편차이다.
+'''
+
+# 리스트처럼 넘파이도 인덱싱,슬라이싱 가능하다.
+# 주의할 점은: 직접 숫자로 인덱스를 넣는 경우, bracket이 더블로 있어야.   e.g_) np1[[1,35]] = [1,1,1]
+
+# 조건을 달아 원하는 값아 선택하기
+# = 논리적 인덱싱
+# e.g_)
+# 평균기온보다 높은 온도는 몇도 인지
+# 우선, 평균보다 높은 것. 그걸 불리언이 들은 배열로 만들고, 그 배열은 sum을 활용해 True갯수를 더한다.
+# list_oct 리스트에 10월 온도들이 들어있다.
+np_oct = np.array(list_oct)
+days = np_oct > np_oct.mean()
+print(days.sum())
+# 이 코드로 높은 날이 며칠이 있었는지 세어보았다.
+# 다음, 넘파이에 이 days 배열을 인덱스로 넣는다.
+np_oct[days]
+
+
+# concatenate 결합과 분리
+# 우선, 배열의 conca와 transpose. 결합과 전치.
+# 1차원일 경우 그대로 길게 1차원이 되고
+# 2차원일 경우 두가지 갈래가 있다.
+# axis=0이면 행을 기준으로 conca.
+# 1이면 열을 기준으로 풀붙여서 conca
 
 
