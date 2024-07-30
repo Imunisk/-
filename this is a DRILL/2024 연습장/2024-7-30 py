@@ -1,0 +1,91 @@
+# this is a Drill
+# The most topics which has been dealed this week's class could be refered as, Python and Jupiter Notebook and HTML and the Pandas module.
+# Be steady, Go for it.
+
+
+# Markdown & HTML law
+
+# Header1
+###### Header6
+<h1> Header1 </h>
+<span style = 'line-height : 50px;
+font-size : 20px, font-weight : bold'> 글 </span>
+
+# 데이터 과학이란 데이터를 연구하여 데이터 엔지니어, 분석가 등의 직무를 수행한다. 데이터를 가공하고 수치적인 통계 데이터를 확인하고, 탐색적 데이터 분석을 통해 시각화 하게 된다.
+# 넘파이 패키지, 판다스, Matplotlib
+# 넘파이는 계산 관련
+# Pandas는 빅데이터 관련
+# tensorflow는 빅디이터,머신러닝 둘다 걸침.   
+
+
+
+# 넘파이
+lst1= [1,2,3,4,5]
+import numpy as np
+np1 = np.array(lst1)
+
+# 넘파이로 배열 만드는 법 3개. 더 있을까?
+# 1
+import numpy as np
+lst = [1,2,3,4,5]
+np1 = np.array(lst)
+# 2
+import numpy as np
+np2 = np.array([1,2,3,4,5])
+# 3
+import numpy as np
+np3 = np.arange(1,6,1)
+
+'''
+이하, import np 생략한다 
+'''
+
+
+
+# n차원
+# 1차원
+np_d1 = np.array([1,2,3]) 
+# 2차원
+np_d2 = np.array([[1,2,3],[4,5,6]])
+
+
+# e.g_)
+# 10 percent increased
+import numpy as np
+item_price = [1000,2000,2500,3000]
+np_price = np.array(item_price)
+np_new_price = np_price * 1.1
+# e.g_)
+# average for mid term and final exam
+mid = np.array([70,90,80,100])
+fin = np.array([90,60,90,100])
+avg = (mid+fin) /2
+
+
+# 넘파이 속성
+np_test = np.array([[1,2,3],[4,5,6]])
+print(np_test.ndim)
+print(np_test.shape)
+print(np_test.size)
+print(np_test.itemsize)
+print(np_test.dtype)
+
+#결과
+'''
+2
+(2,3)
+6
+4      # 4byte
+int32  # 32bit
+'''
+
+# 넘파이 함수들
+# numpy.arange()            R... r이 한개다!
+np_arange(0.1, 1.0, 0.1)  # 이렇게 실수로도 가능
+# reshape（)메서드
+np_array1 = np.arange(1,10).reshape(3,3)
+
+
+
+
+
