@@ -35,17 +35,83 @@ df1 = pd.DataFrame([[10,20,30],[40,50,60]])
 print(sr1) print(sr1.index)
 print(sr1[1:5]) (sr1[[1,2,3]])
 
-
-Q
-Q
-
-
 df1.rename()을 쓸 때 inplace=True를 쓰기
-
 
 import pandas as pd
 sr1 = pd.DateFrame([10,30,20,40,60], \
 index=['a','b','c','d','e'])
+
+import pandas as pd
+df1 = pd.read_csv('/content/drive/.../.csv')
+df1.set_index('학번')
+df1.index = df1['학번']
+
+import pandas as pd
+df1 = pd.read_csv('/content/drive/.csv')
+df1.set_index('')
+df1.set_index('리포트')
+df1.set_index('Number', inplace = True)
+
+# 인덱스 이름으로 지정하기
+print(df1.loc['S01', 'Mid'])
+print(df1.loc['S02','Final'])
+
+# 원소 선택하기
+print(df1.iloc[1,0], df1.iloc[1,1], df1.iloc[1,2])
+print(df1.iloc[1,0], df1.ilocp1,1[, df1.iloc[1,2])
+# implace = True  이 옵션을 쓰면 변경사항이 df1으로 반영된다.
+# loc인덱서는 인덱스명을, iloc은 인덱스 번호를 사용해 해당 행 전체를 
+# 선택할 수 있다.
+
+# 삭제
+df2 = df1.drop(0)              # 0 행 삭제
+df3 = df1.drop('퀴즈', axis=1)   #  열 삭제
+
+# 정렬
+df1.set_index('학번', inplace=True)
+df2 = df1.sort_index(ascending=False)  # 행 기준 정렬
+
+df3 = df1.sort_values(by='기말',ascending=True)  # 열 기준 
+
+####
+
+import numpy as np
+ar1 = np.array([[1,2,3],[4,5,6]])
+ar3 = np.random.randn(3)
+ar4 = np.zeros(3)
+ar7 = np.arange(0,6,1)
+ar8= np7.reshape(2,2)
+ar1 = np.arane(1,21,1)
+ar2 = ar1.reshape(2,10)
+
+
+
+####
+'''
+단기 목표:
+1.p43 넘파이 판다스 다루기 익히기
+2.190 가설검정 이론적 기초 이해하기
+
+
+가설 검정
+포인트 = 표본평균 검정통계량, p-value, 유의 수준, 귀무가설
+가설 검정이란 모집단에 대해 어떤 대립가설을 설정하고(H1), 표본을 추출해 분석함으로써 타당성을 체크하는 과정이다.
+가설 검정의 단계
+ 가설 설정 H0 귀무  H1 대립
+ 유의 수준 알파 0.05
+  두가지의 오류, Type 1  Type 2
+  1 H0이 참인데, 유죄라고 할 트리거
+  2 H0이 거짓인데, 무죄라고 할 트리거
+ p-value : 검정이 귀무가설을 지지하는 퍼센티지 정도. 
+   너 H0 기각할 수 있어? 자신 있어?
+'''
+
+
+
+
+
+
+
 
 
 
