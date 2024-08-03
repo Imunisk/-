@@ -32,6 +32,20 @@ print(sr1[[0,1]])  #인덱스  인덱스의값   [0,1]=[0:2]
 # p.50
 df1 = pd.DataFrame([[10,20,30],[40,50,60]])
 
+print(sr1) print(sr1.index)
+print(sr1[1:5]) (sr1[[1,2,3]])
+
+
+Q
+Q
+Q 파이썬 판다스에서 데이터 프레임의 인덱스는 range(0,n,1)와 같은 모습으로 정해지는가? rename()을 쓸 때 문자열이 아닌 숫자 인덱스로 설정할 수 있는가?
+Q 파이썬 판다스에서 print(sr1.index)의 출력 결과는, RangeIndex(start=0,stop=5,step=1) 와 같은 모습으로 나온다. 숫자 인덱스는 기본적으로 step=1로 나오지 않나? step!1인 경우도 있는가?
+Q 파이썬 판다스에서 df1이라는 이름의 데이터 프레임이 있다고 가정하자. df1.rename()을 쓸 때 inplace=True를 쓰지 않으면 새로운 객체를 생성해서 반환한다. 그럼, 그 새로운 객체는 이름이 무엇으로 생성되나?
+
+
+import pandas as pd
+sr1 = pd.DateFrame([10,30,20,40,60], \
+index=['a','b','c','d','e'])
 
 
 
