@@ -75,17 +75,7 @@ df3 = df1.sort_values(by='기말',ascending=True)  # 열 기준
 
 ####
 
-import numpy as np
-ar1 = np.array([[1,2,3],[4,5,6]])
-ar3 = np.random.randn(3)
-ar4 = np.zeros(3)
-ar7 = np.arange(0,6,1)
-ar8= np7.reshape(2,2)
-ar1 = np.arane(1,21,1)
-ar2 = ar1.reshape(2,10)
-
-
-
+Q 파이썬의 DataFrame에서 테이블 내부의 값은 numpy로 다룰 수 있습니까? 내부의 값은 행렬 형태입니까?
 ####
 '''
 단기 목표:
@@ -105,6 +95,27 @@ ar2 = ar1.reshape(2,10)
  p-value : 검정이 귀무가설을 지지하는 퍼센티지 정도. 
    너 H0 기각할 수 있어? 자신 있어?
 '''
+
+
+######
+print(df1['middleterm'].mean())
+print(df1['']].mean())
+print(df1[''].min())
+import pandas as pd
+af1 = pd.read_csv('//sample.csv')
+df1.set_index('')
+df1 = pd.read_csv(''_  df1.set_index('')
+df1.index = df1['']  df1.index = df1['']
+reset_index()
+df1.set_index('', inplace = True)
+print(df1.iloc[1,0])
+
+
+
+
+
+
+
 
 
 
