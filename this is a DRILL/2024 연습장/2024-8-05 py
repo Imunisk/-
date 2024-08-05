@@ -1,0 +1,31 @@
+# this is a drill
+
+# np
+import numpy as np
+lst = [1,2,3,4,5]
+np1 = np.array(lst)
+np2 = np.array([[1,2],[3，4]])
+np3 = np.arange(1,10,1).reshape(2,5)
+
+np3.sum()  # 55
+np3.ndim   # 2D
+np3.shape  # (2,5)
+np3.size   # 10
+np3.itemsize
+np3.dtype  # int
+np3.argmin() # 0
+np3.mean() # 5.5
+np.median(np3) # 5.5
+#  var std argmax
+
+np_oct = np.array(list_oct)
+np_oct.max()
+np.median(np_oct)
+np_oct.argmax() +1
+days = (np_oct < np_oct.mean()).sum()
+
+
+np1 = np.array([[1,2,3],[4,5,6]])
+sample = np1.mean().sum()
+
+
