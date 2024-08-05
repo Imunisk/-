@@ -28,4 +28,219 @@ days = (np_oct < np_oct.mean()).sum()
 np1 = np.array([[1,2,3],[4,5,6]])
 sample = np1.mean().sum()
 
+np1 = np.array([[1,2],[3,4]])
+np2 = np.arange(1,10).reshape(2,5)
+np2.sum()  # 55
+np2.mean() # 5.5
+np.median(np2)
+
+days = np2> np2.mean()
+print(days.sum())
+np2.argmin()+1
+
+np_oct = np.array(list_oct)
+np_oct.mean()
+np_oct[days]
+
+### arg_Crawling
+import requests
+from bs4 import BeautifulSoup
+code = requests.get("http://www.cgv.co.kr/")
+soup = BeautifulSoup(code.text, "html.parser")
+
+title = soup.select_one("strong.title")
+print(title)
+print(title.text)
+for i in title:
+    print(i.text)
+
+# 2
+import requests
+from bs4 import BeautifulSoup
+code = requests.get("http://finance.naver")
+soup = BeautifulSoup(code.text, 'html.parser')
+price = soup.select_one("ul#eschangeList span.value")
+for i in price:
+    print(i.text)
+
+#3
+code = request.get(f"https://underkg.co.kr")
+soup = BeautifulSoup(code.text, "html.parser")
+title = soup.select("h1.title > a")
+for i in title:
+     print(f"title : {i.text}")
+     news_url = i.attrs["href"]
+     print(f"link : {news_url}")
+     code_news = requests.get(news_url)
+     soup_news = BeautifulSoup(code_news.text, 'html.parser')
+     content = soup_news.select_one("div.reas_body")
+     print(content.text)
+     print("---" * 20)
+
+# 4
+import requests
+from bs4 import BeautifulSoup
+
+code = requests.get(f"http://www.cgv/..")
+soup = BeautifulSoup(code.text, 'html.parser')
+
+title_elements = soup.select("strong.title")
+image_elemenst = soup.select("span.thumb-image > img")
+
+for title,image in zip(title_elements, image_elements):
+     print(f"Title: {title_text})
+     print(image)
+     print("---" * 20)
+
+# 5
+import requests
+from bs4 import BeautifulSoup
+code = requests.get(f"http://www.cgv ")
+soup = BeautifulSoup(code.text, "html.parser")
+title_elements = soup.select("strong.title")
+image_elements = soup.select("span.thumb-image
+> img")
+
+folder_name - "./CGV movie")
+if not os.path.exists(folder_name):
+     os.mkdir(folder_name)
+
+num = 1
+for title,image in zip(title_elements, image_elements):
+     print(f"Movie Title : {title.text}")
+     image_url = image.attrs.["src"]
+     req.urlretrieve(img_url, f"{folder_name}/{num}.jpg")
+
+     num += 1
+     print("--" * 30)
+
+# excel
+book = opennpyxl.Workbook()
+sheet = book.active
+
+code = req
+soup = BeautifulSoup(code.text, "html.parser")
+
+
+# 판다스와 plt
+count_grade = mpg['grade'].value_counts().sort_index()
+count_grade.plot.bar(rot= 0)
+
+imporrt pandas as pd
+exam = pd.read_csv("D:/l")
+exam.head()
+exam.head(2)
+
+df_new = df_sample.copy()
+df_new['var_sum'] = df_new['var1'] +
+df_new['var2']
+df_new['var_mean'] = (df_new['var1'] +
+df_new['var2'])/2
+
+mpg['total'] = (mpg['cty']+mpg['hwy']) /2
+mpg.head()
+
+sum(mpg['total'] /len(mpg)
+
+# HIST
+mpg['total'].plot.hist()
+
+# bar
+import matplotlib.pyplot as plt
+total_counts = mpg['total'].value_counts().sort
+_index()
+
+plt.bar(total_counts.imdex, aver_counts.values,
+color =blue)
+plt.xlable('Average MPG')
+plt.ylable('Frequency')
+plt.title('Histogram of Average MPG')
+plt.show()
+
+# pass of Fail
+import numpy as np
+mpg['test'] = np.where(mpt['tota'] >=20, 'pass', 'fail')
+
+mpg['test'].value_counts()
+count_test = mpf['test'].value_counts()
+
+count_test.plot.bar()
+count_test.plot.bar(rot = 0)
+count_grade = mpg['grade'].value_counts()
+count_grade.plot.bar(rot = 0)
+
+mpg['grade'] = np.where(mpg['total'] >=30, 'A',
+               np.where(mpg['total'] >= 20, 'B',
+'C'))
+
+mpg.head()
+
+# countplot w Titanic dataset
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+var = [1,2,3,4]
+
+import warnings
+warnings.filterwarnings("ignore")
+
+palette_colors = ["#007FFF", 'orange', 'orange']
+sns.countplot(x=var, palette= palette_colors)
+plt.show()
+
+# Titanic
+df = sns.load_dataset('titanic')
+sns.countplot(data = df, x='sex')
+plt.show()
+sns.countplot(data = df, x= 'class, y = 'alive')
+plt.show()
+
+sns.countplot(data=df, y = 'class', hue = 'alive')
+plt.show()
+
+
+# car = MPG
+import pandas as pd
+import seaborn as sns
+
+mpg = pd.read_csv('D:/..')
+sns.scatterplot()
+sns.scatterplot(data=mpg, x='displ', y='hwy')
+
+df = sns.load_dataset('titanic')
+sns.countplot( data=df, x= 'sex')
+sns.countplot( data=df, x='class, hue='alive')
+plt.show()
+sns.countplot(data=df, y='class', hue='alive')
+
+
+import pandas as pd
+import seaborn as sns
+mpg = pd.read_csv('D:///')
+
+sns.scatterplot(data=df, x='displ', y='hwy')
+sns.scatterplot(data=df, x='displ', y='hwy')\
+    .set(xlim=(3,6), ylim(10,30))
+sns.scatterplot(data=df, x='displ',y='hwy', 
+hue='drv')
+# 
+df_mpg = mpg.groupby('drv')\
+           .agg(mean_hwy= ('hwy','drv'))
+df_mpg = mpg.groupby('drv') \
+           .agg(mean_hwy = ('hwy','mean'))
+
+sns.barplot(data=df_mpg, x='dr',y='mean_hwy')
+sns.barplot(dafa=df_mpg, 
+df_mpg = df.mpg.sort_values('mean_hwy',ascending=False)
+df_mpg = df_mpg.sort_values('mean_hwy',
+asdcending=False)
+df_mpg = df_mpg.sort_values('mean_hwy', ascending=False)
+df_mpg = mpg.groupby('drv', as_index = False)
+
+
+
+
 
