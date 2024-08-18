@@ -60,4 +60,99 @@ plt.show()
 
 
 
+#
+sns.factorial('Pclass', 'Survived', hue = 'Sex', data = df_train, size=6, aspect= 1.5)
+
+# Age
+print('제일 나이 많은 탑승객 : {:.1f} Years'.format(df_train['Age'].max()))
+print('제일 어린 탑승객 : {:.1f} Years'.format(df_train['Age'].min()))
+print('탑승객 평균 나이 : {:.1f} Years'.format(df_train['Age'].mean()))
+# 제일 나이 많은 탑승객 : 80.0 Years
+# 제일 어린 탑승객 : 0.4 Years
+# 탑승객 평균 나이 : 29.7 Years
+
+fig, ax = plt.subplots(1, 1, figsize=(9, 5))
+sns.kdeplot(df_train[df_train['Survived'] == 1]['Age'], ax=ax)
+sns.kdeplot(df_train[df_train['Survived'] == 0]['Age'], ax=ax)
+plt.legend(['Survived == 1', 'Survived == 0'])
+plt.show()
+
+# Embarked
+df_train['Embarked'].unique()
+#  array(['S', 'C', 'Q', nan], dtype=object)
+
+f, ax = plt.subplots(1, 1, figsize=(7, 7))
+df_train[['Embarked', 'Survived']].groupby(['Embarked'], as_index=True).mean().sort_values(by='Survived', ascending=False).plot.bar(ax=ax)
+
+#  Family - SibSp + Parch
+df_train['FamilySize'] = df_train['SibSp'] + df_train['Parch'] + 1 # 자신을 포함해야하니 1을 더합니다
+df_test['FamilySize'] = df_test['SibSp'] + df_test['Parch'] + 1 # 자신을 포함해야하니 1을 더합니다
+print(df_train['FamilySize'].max())
+print(df_train['FamilySize'].min())
+
+
+
+# Feature Engineering
+
+# Fill Null
+df_train["Age"].isnull().sum()
+#  177개
+
+# 이름에서 추출하기
+df_train['Initial']= df_train.Name.str.extract('([A-Za-z]+)\.')
+df_train.groupby('Initial')['Survived'].mean().plot.bar()
+
+
+# 각 initial 그룹별 Age 평균 값을 사용해서 채워 넣기
+df_train.groupby('Initial').mean()
+# 위 행렬을 참고하여
+df_train.loc[(df_train.Age.isnull())&(df_train.Initial=='Mr'),'Age'] = 33
+df_train.loc[(df_train.Age.isnull())&(df_train.Initial=='Mrs'),'Age'] = 36
+df_train.loc[(df_train.Age.isnull())&(df_train.Initial=='Master'),'Age'] = 5
+df_train.loc[(df_train.Age.isnull())&(df_train.Initial=='Miss'),'Age'] = 22
+df_train.loc[(df_train.Age.isnull())&(df_train.Initial=='Other'),'Age'] = 46
+
+# Null   - Embarked
+# ( S 에서 가장 많은 탑승객이 있었으므로,
+#  간단하게 Null 을 S로 채워본다.)
+df_train['Embarked'].fillna('S', inplace=True)
+
+
+# Age 를 category화
+# 2가지 방법 :  loc , 아니면 apply
+# 아래엔 apply 방법으로
+def category_age(x):
+    if x < 10:
+        return 0
+    elif x < 20:
+        return 1
+    elif x < 30:
+        return 2
+    elif x < 40:
+        return 3
+    elif x < 50:
+        return 4
+    elif x < 60:
+        return 5
+    elif x < 70:
+        return 6
+    else:
+        return 7    
+    
+df_train['Age_cat'] = df_train['Age'].apply(category_age)
+
+# 출력해 확인해보기
+df_train.groupby(['Age_cat'])['PassengerId'].count()
+
+
+# mapping
+# Initial 5개를 매핑하기
+df_train['Initial'] = df_train['Initial'].map({'Master': 0, 'Miss': 1, 'Mr': 2, 'Mrs': 3, 'Other': 4})
+# Embarked와 Sex 피쳐를 매핑하기
+df_train['Embarked'] = df_train['Embarked'].map({'C': 0, 'Q': 1, 'S': 2})
+df_test['Embarked'] = df_test['Embarked'].map({'C': 0, 'Q': 1, 'S': 2})
+df_train['Sex'] = df_train['Sex'].map({'female': 0, 'male': 1})
+df_test['Sex'] = df_test['Sex'].map({'female': 0, 'male': 1})
+
+
 
