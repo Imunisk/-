@@ -155,4 +155,98 @@ df_train['Sex'] = df_train['Sex'].map({'female': 0, 'male': 1})
 df_test['Sex'] = df_test['Sex'].map({'female': 0, 'male': 1})
 
 
+#///
+#이후는 반복
+
+# matplotlib , seaborn, plotly, pandas, numpy
+
+plt.style.use('seaborn')
+
+import warnings
+warnings.filterwarnings('ignore')
+
+df_train = pd.read_csv(".. /data/train.csv")
+df_train.shape
+df_train.describe()
+
+df_train.isnull().sum()
+df_train.isnull().sum() / df_train.shape[0]
+
+f,ax = plt.subplots(1,2, figsize(18,8))
+df_train['Survived'].value_counts().plot.pie(explode= [0,0.1],
+autopct= '%1.1f%%', ax= ax[0], shadow=True)
+ax[0].set_title('Pie plot - Survived')
+ax[0].set_ylabel('')
+sns.countplot('Survived', dafe=df_train, ax=ax[1])
+ax[1].set_title('Count plot - Survived')
+plt.show()
+
+df_train.describe()
+df_train.isnull().sum() / df_train.shape[0]
+
+f,ax = plt.subplots(1,2, figsize= (18,8))
+df_train['Survived'].value_counts().plot.pie(explode= [0,0.1],
+ax=ax[0], shadow= True)
+ax[0].set_title('Pit plot -Survived')
+ax[0].ylabel('')
+sns.countplot('Survived', data=df_train, ax= ax[1])
+ax[1].set_title('Count plot -Survived')
+
+df_train.descrive()
+df_train.shape
+df_train.isnull().sum() / df_train.shape[0]
+
+f,ax = plt.subplots(1,2, figsize(18,8))
+df_train['Survived'].value_counts().plot.pie(explode = [0,0.1],
+ax= ax[0], shadow=True)
+ax[0].set_title('Pie plot = Survived')
+ax[0].ylabel('')
+sns.countplot('Survived', data=df_train, ax=ax[1])
+ax[1].set_title('Count plot - Survived')
+
+df_train.shape
+df_train.isnull().sum() / df_train.shape[0]
+
+f,ax = plt.subplots(1,2, figsize(18,8))
+df_train['Survived'].value_counts().plot.pie(explode= [0,0.1],
+ax= ax[0], shadow=True)
+ax[0].set_title('Pie plot - Survived')
+ax[0].ylabel('')
+sns.countplot('Survived', data=df_train,ax=ax[1])
+ax[1].set_title('Count plot - Survived')
+
+df_train.info()
+df_train.dtype()
+df_train.describe()
+df_train.isnull().sum() / df_train.shape[0]
+
+f,ax= plt.subplots(1,2, figsize(18,8))
+df_train['Survived'].value_counts().plot.pie(explode= [0,0.1], 
+ax= ax[0], shadow=True)
+ax[0].set_title('Pie plot - Survived')
+sns.countplot('Survived', data =df_train, ax= ax[1])
+ax[1].set_title('Count plot - Survived')
+
+df_train.info()
+df_train.isnull().sum() / df_train.shape[0]
+
+f,ax = plt.subplots(1,2, figsize=(18,8))
+df_train['Survived'].value_counts().plot.pie(explode = [0,0.1],
+ax= ax[0], shadow=True)
+ax[0].set_title('Pie plot - Survived')
+sns.countplot('Survived', data=df_train, ax= ax[1])
+ax[1].set_title('Count plot - Survived)
+plt.show()
+
+df_train.isnull().sum() /df_train.shape[0]
+f,ax = plt.subplot(1,2, figsize=(18,8))
+df_train['Survived'].value_counts().plot.pie(explode=[0,0.1],
+ax = ax[0], shadow=True)
+ax[0].set_title('Pie plot = Survived')
+sns.countplot('Survived', data=df_train, ax=ax[1])
+ax[1].set_title('Count plot - Survived')
+plt.show()
+
+
+
 
