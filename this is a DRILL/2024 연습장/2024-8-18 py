@@ -247,6 +247,37 @@ sns.countplot('Survived', data=df_train, ax=ax[1])
 ax[1].set_title('Count plot - Survived')
 plt.show()
 
+# 알림 끄기
+import warnings
+warnings.filterwarnings('ignore')
 
+import numpy as np
+import seaborn as sns
+import pandas as pd
+import matplotlib.pyplot as plt
+
+f,ax = plt.subplots(1,2, figsize=(18,8))
+df_train['Survived'].value_counts().plot.pie(explode = [0,0.1],
+ax=ax[0], shadow=True)
+ax[0].set_title('Pie plot - Survived')
+sns.countplot('Survived', data=df_train, ax=ax[1])
+ax[1].set_title('Count plot - Survived')
+plt.show()
+
+import warnings
+warnings.filterwarnings('ignore')
+
+f,ax = plt.subplots(1,2, figsize=(18,8))
+df_train['Survived'].value_counts().plot.pie(explode= [0,0.1],
+ax= ax[0], shadow=True)
+ax[0].set_title('Pie plot - Survived')
+ax[0].ylabel('')
+sns.countplot('Survived', data=df_train, ax=ax[1])
+ax[1].set_title('Count plot - Survived')
+
+df_train.describe()
+df_train.isnull().sum() / df_train.shape[0]
+f,ax = plt.subplots(1,2, figsize= (18,8))
+df_train['Survived'].
 
 
