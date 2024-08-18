@@ -42,7 +42,22 @@ plt.show()
 
 # EDA 위해 feature 시각화 작업
 
-df_train[['Pclass', 'Survived']].groupby(['Pclass'], as_inedx= True).count()
-df_train(['Pclass', 'Survived']].groupby(['Pclass'], as_index=True).sum()
+df_train[['Pclass', 'Survived']].groupby(['Pclass'], as_index= True).count()
+df_train(['Pclass', 'Survived']].groupby(['Pclass'], as_index= True).sum()
 pd.crosstab(df_train['Pclass'], df_train['Survived'], margins=True)
+# 크로스테이블은 margins=True를 적으면 소계/합계가 자동으로나온다.
+
+# mean으로 시각화
+df_train[['Pclass','Survived']].groupby(['Pclass'], as_index= True).mean().plot.bar()
+
+# 성별
+f, ax = plt.subplots(1,2, figsize(18,8))
+df_train[['Sex', 'Survived']].groupby(['Sex'], as_index =True).mean().plot.bar(ax=ax[0]_
+ax[0].set_title('Survived vs Sex')
+sns.countplot('Sex', hue= 'Survived;, data=df_train, ax = ax[1])
+ax[1].set_title('Sex: Survived vs Dead')
+plt.show()
+
+
+
 
